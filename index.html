@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個体値シミュ</title>
+  <script type="text/javascript" src="./js/script.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row input-area d-flex justify-content-between">
+      <div class="col-6">
+        <h3 class="mt-3 text-center">♂側親個体値</h3>
+        <table class="table table-bordered mt-3 text-center">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">HP</th>
+              <th scope="col">攻撃力</th>
+              <th scope="col">素早さ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="number" class="form-control " name="hp" value="0" list="inv-H">
+                <datalist id="inv-H">
+                  <option value="100"></option>
+                  <option value="0"></option>
+                  <option value="-100"></option>
+                </datalist>
+              </td>
+              <td>
+                <input type="number" class="form-control " name="attack" value="0" list="inv-A">
+                <datalist id="inv-A">
+                  <option value="100"></option>
+                  <option value="0"></option>
+                  <option value="-100"></option>
+                </datalist>
+              </td>
+              <td>
+                <input type="number" class="form-control " name="speed" value="0" list="inv-S">
+                <datalist id="inv-S">
+                  <option value="100"></option>
+                  <option value="0"></option>
+                  <option value="-100"></option>
+                </datalist>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-6 center-block">
+        <h3 class="mt-3 text-center">♀側親個体値</h3>
+        <table class="table table-bordered mt-3 text-center">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">MP</th>
+              <th scope="col">守備力</th>
+              <th scope="col">賢さ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="number" class="form-control w-100" name="mp" value="0" list="inv-M">
+                <datalist id="inv-M">
+                  <option value="100"></option>
+                  <option value="0"></option>
+                  <option value="-100"></option>
+                </datalist>
+              </td>
+              <td>
+                <input type="number" class="form-control w-100" name="defense" value="0" list="inv-D">
+                <datalist id="inv-D">
+                  <option value="100"></option>
+                  <option value="0"></option>
+                  <option value="-100"></option>
+                </datalist>
+              </td>
+              <td>
+                <input type="number" class="form-control w-100" name="wisdom" value="0" list="inv-W">
+                <datalist id="inv-W">
+                  <option value="100"></option>
+                  <option value="0"></option>
+                  <option value="-100"></option>
+                </datalist>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-10 mx-auto">
+        <h3 class="mt-5 text-center">配合後個体値</h3>
+        <table class="table table-bordered mt-3 text-center">
+          <thead class="table-light">
+            <th>HP</th>
+            <th>MP</th>
+            <th>攻撃力</th>
+            <th>守備力</th>
+            <th>素早さ</th>
+            <th>賢さ</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="correction-value" data-stats="hp">0</td>
+              <td class="correction-value" data-stats="mp">0</td>
+              <td class="correction-value" data-stats="attack">0</td>
+              <td class="correction-value" data-stats="defense">0</td>
+              <td class="correction-value" data-stats="speed">0</td>
+              <td class="correction-value" data-stats="wisdom">0</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="text-muted ">
+          基本的な個体値のルールについては<a
+            href="https://wikiwiki.jp/dqdic3rd/%E3%80%90%E5%80%8B%E4%BD%93%E5%80%A4%E3%80%91#u6f61a95">https://wikiwiki.jp/dqdic3rd/【個体値】</a>を参照されたし
+          ※MP,守備力,賢さの個体値は1/2した値を表示しています。<br>
+          最も高い/低い個体値が複数ある場合HP,MP,攻撃力,守備力,素早さ,賢さ(ゲーム内ステータス表記が上から順)の順に個体値が補正されます。<br>
+          個体値補正過程では、個体値をアルファベット表記で略記します。個体値が最大の場合大文字、個体値が最小の場合小文字アルファベット一文字で
+          表します。<br>
+          HP:h/H MP:m/M 攻撃力:a/A 守備力:d/D 素早さ:s/S 賢さ:w/W<br>
+          また、個体値が0の場合は0、それ以外の数値では{対応小文字アルファベット}-{個体値}で表します。
+        </div>
+
+
+      </div>
+    </div>
+
+    <h4 class="mt-5">個体値補正過程</h4>
+    <div class="explanation">
+      <li>個体値の合計が0のため個体値補正はありません。</li>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

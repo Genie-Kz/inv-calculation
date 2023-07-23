@@ -1,0 +1,17 @@
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button { 
+  -webkit-appearance: none !important; 
+  margin: 0 !important; 
+} 
+
+input[type="number"]{
+    text-align: center;
+}
+
+.error-msg{
+    color:red;
+}
+
+td{
+  width:16%;
+}
