@@ -41,6 +41,20 @@
     correctedSpeed.textContent = currentInv.speed;
     correctedWisdom.textContent = currentInv.wisdom;
 
+    let preCorrectedHp = document.querySelector('td.preCorrection-value[data-stats="hp"]');
+    let preCorrectedMp = document.querySelector('td.preCorrection-value[data-stats="mp"]');
+    let preCorrectedAttack = document.querySelector('td.preCorrection-value[data-stats="attack"]');
+    let preCorrectedDefense = document.querySelector('td.preCorrection-value[data-stats="defense"]');
+    let preCorrectedSpeed = document.querySelector('td.preCorrection-value[data-stats="speed"]');
+    let preCorrectedWisdom = document.querySelector('td.preCorrection-value[data-stats="wisdom"]');
+
+    preCorrectedHp.textContent = hp.value;
+    preCorrectedMp.textContent = mp.value;
+    preCorrectedAttack.textContent = attack.value;
+    preCorrectedDefense.textContent = defense.value;
+    preCorrectedSpeed.textContent = speed.value;
+    preCorrectedWisdom.textContent = wisdom.value;
+
   });
 
   class IndividualValue {
