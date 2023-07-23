@@ -118,11 +118,11 @@
             IndividualValue.MIN_INV_VALUE
           ) {
             this.individualValues[maxInvIndex] -= this.totalIndividualValue;
-            this.addList(`最も個体値が高く個体値補正を受ける優先度の高い${highestInv}の個体値から${preTotal}を引き個体値が<br>${this.toString()}になります。`);
+            this.addList(`最も個体値が高く個体値補正を受ける優先度の高い${highestInv}の個体値から${preTotal}を引き個体値が${this.toString()}になります。`);
           } else {
             let correction = this.individualValues[maxInvIndex] + 100
             this.individualValues[maxInvIndex] = IndividualValue.MIN_INV_VALUE;
-            this.addList(`最も個体値が高く個体値補正を受ける優先度の高い${highestInv}の個体値から${preTotal}を引くと-100を下回ってしまうため、-100になるように${correction}引き、個体値が<br>${this.toString()}になります。`);
+            this.addList(`最も個体値が高く個体値補正を受ける優先度の高い${highestInv}の個体値から${preTotal}を引くと-100を下回ってしまうため、-100になるように${correction}引き、個体値が${this.toString()}になります。`);
           }
         } else {
           let min = this.individualValues.reduce((result, elem) =>
@@ -139,12 +139,12 @@
             IndividualValue.MAX_INV_VALUE
           ) {
             this.individualValues[minInvIndex] -= this.totalIndividualValue;
-            this.addList(`最も個体値が低く個体値補正を受ける優先度の高い${lowestInv}の個体値に${-preTotal}を足し個体値が<br>${this.toString()}になります。`);
+            this.addList(`最も個体値が低く個体値補正を受ける優先度の高い${lowestInv}の個体値に${-preTotal}を足し個体値が${this.toString()}になります。`);
 
           } else {
             let correction = -(this.individualValues[minInvIndex]) + 100
             this.individualValues[minInvIndex] = IndividualValue.MAX_INV_VALUE;
-            this.addList(`最も個体値が低く個体値補正を受ける優先度の高い${lowestInv}の個体値に${-preTotal}を足すと-100を下回ってしまうため、-100になるように${correction}足し、個体値が<br><strong>${this.toString()}</strong>になります。`);
+            this.addList(`最も個体値が低く個体値補正を受ける優先度の高い${lowestInv}の個体値に${-preTotal}を足すと-100を下回ってしまうため、-100になるように${correction}足し、個体値が<strong>${this.toString()}</strong>になります。`);
           }
         }
 
