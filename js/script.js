@@ -191,7 +191,8 @@
         } else if (inv == 0) {
           shortInvStrings.push('');
         } else {
-
+          let prefix = inv > 0 ? this.highInvShortStrings[index] : this.lowInvShortStrings[index];
+          shortInvStrings.push(`${prefix}${inv}`)
         }
       });
       return shortInvStrings;
