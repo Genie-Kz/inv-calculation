@@ -144,7 +144,7 @@
           } else {
             let correction = -(this.individualValues[minInvIndex]) + 100
             this.individualValues[minInvIndex] = IndividualValue.MAX_INV_VALUE;
-            this.addList(`最も個体値が低く個体値補正を受ける優先度の高い${lowestInv}の個体値に${-preTotal}を足すと-100を下回ってしまうため、-100になるように${correction}足し、個体値が<strong>${this.toString()}</strong>になります。`);
+            this.addList(`最も個体値が低く個体値補正を受ける優先度の高い${lowestInv}の個体値に${-preTotal}を足すと100を上回ってしまうため、100になるように${correction}足し、個体値が${this.toString()}になります。`);
           }
         }
 
